@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/eventlistener.xsd">
+	<import>
+		<eventlistener>
+			<eventclassname>ThreadAddForm</eventclassname>
+			<eventname>show</eventname>
+			<listenerclassfile>lib/system/event/listener/ThreadAddFormPostAnonymouslyListener.class.php</listenerclassfile>
+		</eventlistener>
+		<eventlistener>
+			<eventclassname>ThreadAddForm</eventclassname>
+			<eventname>save</eventname>
+			<listenerclassfile>lib/system/event/listener/ThreadAddFormPostAnonymouslyListener.class.php</listenerclassfile>
+		</eventlistener>
+		<eventlistener>
+			<eventclassname>ThreadAddForm</eventclassname>
+			<eventname>saved</eventname>
+			<listenerclassfile>lib/system/event/listener/ThreadAddFormPostAnonymouslyListener.class.php</listenerclassfile>
+		</eventlistener>
+		<eventlistener>
+			<eventclassname>PostAddForm</eventclassname>
+			<eventname>show</eventname>
+			<listenerclassfile>lib/system/event/listener/ThreadAddFormPostAnonymouslyListener.class.php</listenerclassfile>
+		</eventlistener>
+		<eventlistener>
+			<eventclassname>PostAddForm</eventclassname>
+			<eventname>save</eventname>
+			<listenerclassfile>lib/system/event/listener/ThreadAddFormPostAnonymouslyListener.class.php</listenerclassfile>
+		</eventlistener>
+		<eventlistener>
+			<eventclassname>PostAddForm</eventclassname>
+			<eventname>saved</eventname>
+			<listenerclassfile>lib/system/event/listener/ThreadAddFormPostAnonymouslyListener.class.php</listenerclassfile>
+		</eventlistener>
+	</import>
+</data>
