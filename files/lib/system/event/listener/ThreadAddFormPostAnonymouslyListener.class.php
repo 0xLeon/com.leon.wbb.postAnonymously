@@ -13,6 +13,7 @@ require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
  * @category 	Burning Board
  */
 class ThreadAddFormPostAnonymouslyListener implements EventListener {
+	protected static $postAnonymously = 0;
 	protected static $userID = 0;
 	protected static $ipAddress = '';
 	
@@ -21,11 +22,14 @@ class ThreadAddFormPostAnonymouslyListener implements EventListener {
 	 */
 	public function execute($eventObj, $className, $eventName) {
 		if ($eventObj->board->getPermission('canPostAnonymously')) {
-			if ($eventName === 'show') {
+			if ($eventName === 'readFormParameters') {
+				isset($_POST['postAnonymously']) self::$postAnonymously = intval($_POST['postAnonymously']);
+			}
+			else if ($eventName === 'show') {
 				WCF::getTPL()->append('additionalSettings', WCF::getTPL()->fetch('messageFormSettingsPostAnonymously'));
 			}
 			else if ($eventName === 'save') {
-				if (isset($_POST['postAnonymously']) && intval($_POST['postAnonymously'])) {
+				if (self::$postAnonymously) {
 					self::$userID = WCF::getUser()->userID;
 					self::$ipAddress = WCF::getSession()->ipAddress;
 					
@@ -35,8 +39,10 @@ class ThreadAddFormPostAnonymouslyListener implements EventListener {
 				}
 			}
 			else if ($eventName === 'saved') {
-				WCF::getUser()->userID = self::$userID;
-				WCF::getSession()->ipAddress = self::$ipAddress;
+				if (self::$postAnonymously) {
+					WCF::getUser()->userID = self::$userID;
+					WCF::getSession()->ipAddress = self::$ipAddress;
+				}
 			}
 		}
 	}
