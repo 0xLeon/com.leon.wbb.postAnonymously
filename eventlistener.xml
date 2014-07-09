@@ -8,6 +8,11 @@
 		</eventlistener>
 		<eventlistener>
 			<eventclassname>ThreadAddForm</eventclassname>
+			<eventname>assignVariables</eventname>
+			<listenerclassfile>lib/system/event/listener/ThreadAddFormPostAnonymouslyListener.class.php</listenerclassfile>
+		</eventlistener>
+		<eventlistener>
+			<eventclassname>ThreadAddForm</eventclassname>
 			<eventname>show</eventname>
 			<listenerclassfile>lib/system/event/listener/ThreadAddFormPostAnonymouslyListener.class.php</listenerclassfile>
 		</eventlistener>
@@ -24,6 +29,11 @@
 		<eventlistener>
 			<eventclassname>PostAddForm</eventclassname>
 			<eventname>readFormParameters</eventname>
+			<listenerclassfile>lib/system/event/listener/ThreadAddFormPostAnonymouslyListener.class.php</listenerclassfile>
+		</eventlistener>
+		<eventlistener>
+			<eventclassname>PostAddForm</eventclassname>
+			<eventname>assignVariables</eventname>
 			<listenerclassfile>lib/system/event/listener/ThreadAddFormPostAnonymouslyListener.class.php</listenerclassfile>
 		</eventlistener>
 		<eventlistener>

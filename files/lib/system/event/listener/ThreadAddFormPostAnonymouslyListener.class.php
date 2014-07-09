@@ -25,6 +25,9 @@ class ThreadAddFormPostAnonymouslyListener implements EventListener {
 			if ($eventName === 'readFormParameters') {
 				if (isset($_POST['postAnonymously'])) self::$postAnonymously = intval($_POST['postAnonymously']);
 			}
+			else if ($eventName === 'assignVariables') {
+				WCF::getTPL()->assign('postAnonymously', self::$postAnonymously);
+			}
 			else if ($eventName === 'show') {
 				WCF::getTPL()->append('additionalSettings', WCF::getTPL()->fetch('messageFormSettingsPostAnonymously'));
 			}
